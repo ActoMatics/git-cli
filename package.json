@@ -1,0 +1,41 @@
+{
+  "name": "cli-git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "bin" : {
+    "advanced-cli" : "./lib/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && npm run global",
+    "build": "npm run clean:some && stc -p .",
+    "global" : "npm i -g && advanced-cli",
+    "clean:some" : "rm -rf ./lib ./docs",
+    "tscov": "tscov --min-coverage 90",
+    "tscov:d": "tscov --details",
+    "publish-package": "npm run build && npm run publish",
+    "docs": "typedoc --out docs ./src"
+  },
+  "author": "Sarit Vakrat",
+  "license": "ISC",
+  "dependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "figlet": "^1.2.3",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^6.5.1",
+    "inversify": "^5.0.1",
+    "kleur": "^3.0.3",
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@liftr/tscov": "^1.4.1",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^12.7.1",
+    "ts-node": "^8.3.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.5.3"
+  }
+}
